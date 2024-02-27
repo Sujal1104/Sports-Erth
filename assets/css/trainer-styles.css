@@ -1,0 +1,167 @@
+.trainer-details {
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+  text-transform: capitalize;
+  margin: 4rem auto;
+}
+
+.trainer-details > aside {
+  max-width: 30%;
+  height: min-content;
+}
+
+.triner-card-carousel {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.triner-card-carousel img {
+  height: 50vh;
+  object-fit: cover;
+  border: 2px solid #f23849;
+}
+
+.triner-card-carousel .slick-track {
+  padding: 3rem 0;
+}
+
+.trainer-card-details .slick-list {
+  overflow: visible;
+}
+
+.trainer-card-details {
+  background: #101010;
+  border: 1px solid #f23849;
+  border-radius: 20px;
+  padding: 1rem;
+  max-width: 65%;
+  margin: auto;
+}
+
+.trainer-card-details > h3 {
+  font-family: "Roboto";
+  font-weight: 600;
+  text-transform: capitalize;
+
+  color: #f23849;
+}
+
+.trainer-card-details > p > i {
+  color: #fecb17;
+}
+
+.trainer-card-details > table {
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+.trainer-card-details > table > tbody > tr > td:first-child {
+  color: #f23849;
+}
+.trainer-card-details > table > tbody > tr > td:last-child {
+  text-align: end;
+}
+
+.trainer-buttons-wrap {
+  display: flex;
+  width: 60%; 
+  gap: 10px;
+  margin: -10% auto;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.trainer-buttons {
+  display: block;
+  margin: 0 auto;
+  background-color: transparent;
+  color: white;
+  border: 1px solid #f23849;
+  border-radius: 30px;
+  padding: 0.5rem 1rem;
+  justify-content: center;
+  cursor: pointer;
+  /* margin-left: 10%; */
+}
+.trainer-buttons:hover{background-color:#202020; color: #f23849; border-color: white;}
+
+.trainer-card-details > button:first-of-type {
+  margin-bottom: 1rem;
+}
+
+.trainer-card-details > button:hover {
+  background-color: #f23849;
+}
+
+.trainer-details > article > h3,
+.trainer-details > article > h4 {
+  margin-bottom: 1rem;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.trainer-details > article ol {
+  list-style: decimal;
+  padding-left: 1rem;
+}
+
+.trainer-details > article span {
+  color: #f23849;
+}
+
+.trainer-details > article > div {
+  display: flex;
+  gap: 1rem;
+}
+
+.trainer-details > article > div > p {
+  background: #484545;
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  font-family: "Roboto";
+  font-weight: 600;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .trainer-details {
+    flex-direction: column;
+  }
+  .trainer-details > aside {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 525px) and (min-width: 321px) {
+  .trainer-details > article > div {
+    flex-direction: column;
+    margin: 1rem 0;
+  }
+  .trainer-buttons {
+    padding: 0.5rem 0.8rem;
+  }
+  .trainer-details {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .trainer-details > article > div {
+    flex-direction: column;
+    margin: 1rem 0;
+  }
+  .trainer-buttons-wrap {
+    width: 65%;
+    margin: auto;
+  }
+  .trainer-buttons {
+    padding: 0.5rem 0.7rem;
+    margin: 0.2rem;
+  }
+  .trainer-details {
+    margin: 0;
+  }
+}

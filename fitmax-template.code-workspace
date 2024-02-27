@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../assets/js"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "fitmax-template"
+	}
+}

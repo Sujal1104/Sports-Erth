@@ -1,0 +1,54 @@
+.yt-slider-container {
+  background-image: url("./assets/img/yt-bg.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding: 15rem 0;
+}
+.yt-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+
+.slick-prev,
+.slick-next {
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 3rem;
+}
+
+.yt-slider .slick-center {
+  scale: 1.1 !important;
+  transition: 500ms ease;
+}
+
+.yt-slider .slick-list {
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.yt-slider .slick-track {
+  padding: 2rem 0;
+}
+
+.yt-title {
+  font-family: "Roboto";
+  font-weight: 700;
+  font-size: 48px;
+  text-transform: capitalize;
+  text-align: center;
+  margin: 2rem 0;
+  color: #f23849;
+}
+
+@media screen and (max-width: 525px) {
+  .yt-title {
+    font-size: 32px;
+  }
+  .yt-slider-container {
+    padding: 5rem 0;
+  }
+}

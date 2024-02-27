@@ -1,0 +1,875 @@
+<html lang="zxx">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sports Erth | Store</title>
+    <!-- =================== META =================== -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="shortcut icon" href="assets/img/favicon.png" />
+    <!-- =================== STYLE =================== -->
+    <link rel="stylesheet" href="assets/css/slick.min.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap-grid.css" />
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/store.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="assets/css/style1.css"> -->
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="style1.css" />
+    <style type="text/css">
+      .lf-progress {
+        -webkit-appearance: none;
+        -moz-apperance: none;
+        width: 100%;
+        /* margin: 0 10px; */
+        height: 4px;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      .lf-progress:focus {
+        outline: none;
+        border: none;
+      }
+      .lf-progress::-moz-range-track {
+        cursor: pointer;
+        background: none;
+        border: none;
+        outline: none;
+      }
+      .lf-progress::-webkit-slider-thumb {
+        -webkit-appearance: none !important;
+        height: 13px;
+        width: 13px;
+        border: 0;
+        border-radius: 50%;
+        background: #0fccce;
+        cursor: pointer;
+      }
+      .lf-progress::-moz-range-thumb {
+        -moz-appearance: none !important;
+        height: 13px;
+        width: 13px;
+        border: 0;
+        border-radius: 50%;
+        background: #0fccce;
+        cursor: pointer;
+      }
+      .lf-progress::-ms-track {
+        width: 100%;
+        height: 3px;
+        cursor: pointer;
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+      }
+      .lf-progress::-ms-fill-lower {
+        background: #ccc;
+        border-radius: 3px;
+      }
+      .lf-progress::-ms-fill-upper {
+        background: #ccc;
+        border-radius: 3px;
+      }
+      .lf-progress::-ms-thumb {
+        border: 0;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background: #0fccce;
+        cursor: pointer;
+      }
+      .lf-progress:focus::-ms-fill-lower {
+        background: #ccc;
+      }
+      .lf-progress:focus::-ms-fill-upper {
+        background: #ccc;
+      }
+      .lf-player-container :focus {
+        outline: 0;
+      }
+      .lf-popover {
+        position: relative;
+      }
+
+      .lf-popover-content {
+        display: inline-block;
+        position: absolute;
+        opacity: 1;
+        visibility: visible;
+        transform: translate(0, -10px);
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+        transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+      }
+
+      .lf-popover-content.hidden {
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(0, 0px);
+      }
+
+      .lf-player-btn-container {
+        display: flex;
+        align-items: center;
+      }
+      .lf-player-btn {
+        cursor: pointer;
+        fill: #999;
+        width: 14px;
+      }
+
+      .lf-player-btn.active {
+        fill: #555;
+      }
+
+      .lf-popover {
+        position: relative;
+      }
+
+      .lf-popover-content {
+        display: inline-block;
+        position: absolute;
+        background-color: #ffffff;
+        opacity: 1;
+
+        transform: translate(0, -10px);
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+        transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+        padding: 10px;
+      }
+
+      .lf-popover-content.hidden {
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(0, 0px);
+      }
+
+      .lf-arrow {
+        position: absolute;
+        z-index: -1;
+        content: "";
+        bottom: -9px;
+        border-style: solid;
+        border-width: 10px 10px 0px 10px;
+      }
+
+      .lf-left-align,
+      .lf-left-align .lfarrow {
+        left: 0;
+        right: unset;
+      }
+
+      .lf-right-align,
+      .lf-right-align .lf-arrow {
+        right: 0;
+        left: unset;
+      }
+
+      .lf-text-input {
+        border: 1px #ccc solid;
+        border-radius: 5px;
+        padding: 3px;
+        width: 60px;
+        margin: 0;
+      }
+
+      .lf-color-picker {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 90px;
+      }
+
+      .lf-color-selectors {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .lf-color-component {
+        display: flex;
+        flex-direction: row;
+        font-size: 12px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .lf-color-component strong {
+        width: 40px;
+      }
+
+      .lf-color-component input[type="range"] {
+        margin: 0 0 0 10px;
+      }
+
+      .lf-color-component input[type="number"] {
+        width: 50px;
+        margin: 0 0 0 10px;
+      }
+
+      .lf-color-preview {
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 5px;
+      }
+
+      .lf-preview {
+        height: 60px;
+        width: 60px;
+      }
+
+      .lf-popover-snapshot {
+        width: 150px;
+      }
+      .lf-popover-snapshot h5 {
+        margin: 5px 0 10px 0;
+        font-size: 0.75rem;
+      }
+      .lf-popover-snapshot a {
+        display: block;
+        text-decoration: none;
+      }
+      .lf-popover-snapshot a:before {
+        content: "⥼";
+        margin-right: 5px;
+      }
+      .lf-popover-snapshot .lf-note {
+        display: block;
+        margin-top: 10px;
+        color: #999;
+      }
+      .lf-player-controls > div {
+        margin-right: 5px;
+        margin-left: 5px;
+      }
+      .lf-player-controls > div:first-child {
+        margin-left: 0px;
+      }
+      .lf-player-controls > div:last-child {
+        margin-right: 0px;
+      }
+    </style>
+    <style id="_goober">
+      @keyframes go2264125279 {
+        from {
+          transform: scale(0) rotate(45deg);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1) rotate(45deg);
+          opacity: 1;
+        }
+      }
+      @keyframes go3020080000 {
+        from {
+          transform: scale(0);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      @keyframes go463499852 {
+        from {
+          transform: scale(0) rotate(90deg);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1) rotate(90deg);
+          opacity: 1;
+        }
+      }
+      @keyframes go1268368563 {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes go1310225428 {
+        from {
+          transform: scale(0) rotate(45deg);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1) rotate(45deg);
+          opacity: 1;
+        }
+      }
+      @keyframes go651618207 {
+        0% {
+          height: 0;
+          width: 0;
+          opacity: 0;
+        }
+        40% {
+          height: 0;
+          width: 6px;
+          opacity: 1;
+        }
+        100% {
+          opacity: 1;
+          height: 10px;
+        }
+      }
+      @keyframes go901347462 {
+        from {
+          transform: scale(0.6);
+          opacity: 0.4;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      .go4109123758 {
+        z-index: 9999;
+      }
+      .go4109123758 > * {
+        pointer-events: auto;
+      }
+    </style>
+  </head>
+
+  <body id="home" class="page-trainer page-loaded">
+    <!--================ PRELOADER ================-->
+    <div class="preloader-cover">
+      <div id="cube-loader">
+        <div class="caption">
+          <div class="cube-loader">
+            <div class="cube loader-1"></div>
+            <div class="cube loader-2"></div>
+            <div class="cube loader-4"></div>
+            <div class="cube loader-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--============== PRELOADER END ==============-->
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+      <a href="#" class="nav-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+      <div class="header-menu">
+        <div class="container new-navbar">
+          <div class="header-logo">
+            <a href="index.html" class="logo"
+              ><img src="assets/img/footer-logo2.png" alt="logo"
+            /></a>
+          </div>
+          <nav class="nav-menu">
+            <ul class="nav-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <!-- <li><a href="services.html">Sports</a></li> -->
+              <li>
+                <a href="sports.html">Sports</a>
+                <!-- <ul>
+<li><a href="program.html">Gym</a></li>
+<li><a href="trainer.html">Karate</a></li>
+<li><a href="trainer.html">Cricket</a></li>
+<li><a href="trainer.html">Tennise</a></li>
+<li><a href="trainer.html">Football</a></li>
+<li><a href="trainer.html">Horse Riding</a></li>
+</ul> -->
+              </li>
+
+              <!-- <ul>
+<li><a href="program.html">Gym</a></li>
+<li><a href="trainer.html">Karate</a></li>
+<li><a href="trainer.html">Cricket</a></li>
+<li><a href="trainer.html">Tennise</a></li>
+<li><a href="trainer.html">Football</a></li>
+<li><a href="trainer.html">Horse Riding</a></li>
+</ul> -->
+              <!--<li><a href="services.html">Trainers</a></li>-->
+              <li>
+                <a href="trainer.html">Trainers</a>
+                <!-- <ul>
+<li><a href="program.html">Gym Trainer</a></li>
+<li><a href="trainer.html">Cricket Coach</a></li>
+<li><a href="trainer.html">Karate Coach</a></li>
+<li><a href="trainer.html">Yoga Teacher</a></li>
+<li><a href="trainer.html">Dietitian</a></li>
+</ul> -->
+              </li>
+              <li><a href="store.html">Store</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <!-- <li><a href="#">Shop</a></li> -->
+              <!-- <li><a href="#">News</a></li> -->
+            </ul>
+          </nav>
+          <form class="search-form">
+            <button
+              type="submit"
+              class="btn mr-3"
+              id="register-button"
+              style="height: unset; padding: 5px 20px !important"
+            >
+              <a href="register.html">Register With Us</a>
+            </button>
+            <input
+              type="search"
+              class="search-form__field"
+              placeholder="Search"
+              id="search-field"
+              value=""
+              name="s"
+            />
+            <button
+              type="button"
+              id="search-button"
+              class="search-form__submit"
+            >
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <!-- =============== HEADER END =============== -->
+
+    <!-- =============== HEADER-TITLE =============== -->
+    <section
+      class="s-header-title"
+      style="background-image: url(assets/img/bg-1-min.png)"
+    >
+      <div class="container">
+        <h1 class="title">Store</h1>
+        <ul class="breadcrambs">
+          <li><a href="index.html">Home</a></li>
+          <li>Store</li>
+        </ul>
+      </div>
+    </section>
+    <!-- ============= HEADER-TITLE END ============= -->
+
+    <section class="s-our-trainer">
+      <div class="container">
+        <div class="row">
+          <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h2 class="title-decor"><span>Our</span> <span>Products</span></h2>
+          </div>
+
+          <div class="col-12">
+            <div class="store-filters">
+              <button class="btn btn-default filter-button" data-filter="all">
+                All Product
+              </button>
+              <button
+                class="btn btn-default filter-button"
+                data-filter="shoes-for-men"
+              >
+                Shoes Wear Men
+              </button>
+              <button
+                class="btn btn-default filter-button"
+                data-filter="nutrition"
+              >
+                Nutrition
+              </button>
+              <button
+                class="btn btn-default filter-button"
+                data-filter="sports"
+              >
+                Sports accessories
+              </button>
+            </div>
+          </div>
+          <br />
+
+          <div class="product-grid">
+            <div class="product-card" data-category="shoes-for-men">
+              <img src="assets/img/products/gym-prod-1.png" alt="" />
+              <div>
+                <h3>Shoes For Men</h3>
+                <p>description...</p>
+                $40 <strike>$50</strike>
+                <p>
+                  Rating&nbsp;
+                  <span
+                    ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                    ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                    ><i class="fa fa-star"></i></span
+                  >&nbsp;4.0
+                </p>
+                <button>Add To Cart</button>
+              </div>
+            </div>
+            <div class="product-card" data-category="shoes-for-men">
+              <img src="assets/img/products/gym-prod-3.png" alt="" />
+              <div>
+                <h3>Shoes For Men</h3>
+                <p>description...</p>
+                $40 <strike>$50</strike>
+                <p>
+                  Rating&nbsp;
+                  <span
+                    ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                    ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                    ><i class="fa fa-star"></i></span
+                  >&nbsp;4.0
+                </p>
+                <button>Add To Cart</button>
+              </div>
+            </div>
+            <div class="product-card" data-category="nutrition">
+              <img src="assets/img/products/gym-prod-4.png" alt="" />
+              <div>
+                <h3>Nutrition</h3>
+                <p>description...</p>
+                $40 <strike>$50</strike>
+                <p>
+                  Rating&nbsp;
+                  <span
+                    ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                    ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                    ><i class="fa fa-star"></i></span
+                  >&nbsp;4.0
+                </p>
+                <button>Add To Cart</button>
+              </div>
+            </div>
+            <div class="product-card" data-category="nutrition">
+              <img src="assets/img/products/gym-prod-5.png" alt="" />
+              <div>
+                <h3>Nutrition</h3>
+                <p>description...</p>
+                $40 <strike>$50</strike>
+                <p>
+                  Rating&nbsp;
+                  <span
+                    ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                    ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                    ><i class="fa fa-star"></i></span
+                  >&nbsp;4.0
+                </p>
+                <button>Add To Cart</button>
+              </div>
+            </div>
+            <div class="product-card" data-category="sports">
+              <img src="assets/img/products/gym-prod-6.png" alt="" />
+              <div>
+                <h3>Sports accessories</h3>
+                <p>description...</p>
+                $40 <strike>$50</strike>
+                <p>
+                  Rating&nbsp;
+                  <span
+                    ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                    ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                    ><i class="fa fa-star"></i></span
+                  >&nbsp;4.0
+                </p>
+                <button>Add To Cart</button>
+              </div>
+            </div>
+            <div class="product-card" data-category="sports">
+              <img src="assets/img/products/gym-prod-8.png" alt="" />
+              <div>
+                <h3>Sports accessories</h3>
+                <p>description...</p>
+                $40 <strike>$50</strike>
+                <p>
+                  Rating&nbsp;
+                  <span
+                    ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                    ><i class="fa fa-star"></i><i class="fa fa-star"></i
+                    ><i class="fa fa-star"></i></span
+                  >&nbsp;4.0
+                </p>
+                <button>Add To Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ S-CROSSFIT-BANNER ============ -->
+
+    <!-- ============== S-TESTIMONIALS ============== -->
+    <section
+      class="s-testimonials"
+      style="background-image: url(assets/img/bg-testimonials.jpg)"
+    >
+      <div class="mask"></div>
+      <img
+        class="testimonials-effect"
+        src="assets/img/bg-testimonials.svg"
+        alt="effect"
+      />
+      <div class="container">
+        <div class="testimonials-slider">
+          <div class="testimonial-slide">
+            <p>
+              “Phasellus vestibulum nec dolor quis varius. Lorem ipsum dolor sit
+              amet, consectetur adipiscing elit. Phasellus gravida magna sit
+              amet euismod lacinia. Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit”
+            </p>
+            <img src="assets/img/testimonials-1.png" alt="img" />
+            <h3 class="name">Anna Piters</h3>
+            <div class="prof">our client</div>
+          </div>
+          <div class="testimonial-slide">
+            <p>
+              “Phasellus vestibulum nec dolor quis varius. Lorem ipsum dolor sit
+              amet, consectetur adipiscing elit. Phasellus gravida magna sit
+              amet euismod lacinia. Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit”
+            </p>
+            <img src="assets/img/testimonials-2.png" alt="img" />
+            <h3 class="name">Mark Klark</h3>
+            <div class="prof">our client</div>
+          </div>
+          <div class="testimonial-slide">
+            <p>
+              “Phasellus vestibulum nec dolor quis varius. Lorem ipsum dolor sit
+              amet, consectetur adipiscing elit. Phasellus gravida magna sit
+              amet euismod lacinia. Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit”
+            </p>
+            <img src="assets/img/testimonials-3.png" alt="img" />
+            <h3 class="name">Kat Smith</h3>
+            <div class="prof">our client</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ============ S-TESTIMONIALS END ============ -->
+
+    <!-- ================ S-CONTACTS ================ -->
+    <section
+      class="s-contacts"
+      style="background-image: url(assets/img/bg-contacts.svg)"
+    >
+      <div class="container">
+        <h2 class="title-decor">Contact <span>Us</span></h2>
+        <p class="slogan">
+          Maecenas consequat ex id lobortis venenatis. Mauris id erat enim.
+          Morbi dolor dolor, auctor tincidunt lorem ut, venenatis dapibus miq.
+        </p>
+        <div class="row">
+          <div class="col-md-5 col-lg-4">
+            <div class="contact-item">
+              <div class="contact-item-left">
+                <img src="assets/img/icon-1.svg" alt="img" />
+                <h4>need help</h4>
+              </div>
+              <div class="contact-item-right">
+                <ul class="contact-item-list">
+                  <li><a href="tel:18004886040">1-800-488-6040</a></li>
+                  <li><a href="tel:18005784090">1-800-578-4090</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-left">
+                <img src="assets/img/icon-2.svg" alt="img" />
+                <h4>questions</h4>
+              </div>
+              <div class="contact-item-right">
+                <ul class="contact-item-list">
+                  <li><a href="mailto:team@gmail.com">team@gmail.com</a></li>
+                  <li><a href="mailto:help@gmail.com">help@gmail.com</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-left">
+                <img src="assets/img/icon-3.svg" alt="img" />
+                <h4>address</h4>
+              </div>
+              <div class="contact-item-right">
+                <ul class="contact-item-list">
+                  <li>8500, Lorem Street, Chicago, IL, 55030</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-7 col-lg-8">
+            <form
+              id="contactform"
+              action="assets/php/contact.html"
+              name="contactform"
+            >
+              <ul class="form-cover">
+                <li class="inp-name">
+                  <label>Name * (required)</label>
+                  <input id="name" type="text" name="your-name" />
+                </li>
+                <li class="inp-email">
+                  <label>E-mail * (required)</label>
+                  <input id="email" type="email" name="your-email" />
+                </li>
+                <li class="inp-text">
+                  <label>Message * (required)</label>
+                  <textarea
+                    id="comments"
+                    name="your-text"
+                    data-gramm="false"
+                    wt-ignore-input="true"
+                  ></textarea>
+                </li>
+              </ul>
+              <div class="checkbox-wrap">
+                <div class="checkbox-cover">
+                  <input type="checkbox" />
+                  <p>
+                    By using this form you agree with the storage and handling
+                    of your data by this website.
+                  </p>
+                </div>
+              </div>
+              <div class="btn-form-cover">
+                <button id="#submit" type="submit" class="btn">
+                  send comment
+                </button>
+              </div>
+            </form>
+            <div id="message"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ============== S-CONTACTS-END ============== -->
+
+    <!-- ================== FOOTER ================== -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-lg-3 footer-item-logo">
+            <a href="index.html" class="logo-footer"
+              ><img src="assets/img/footer-logo2.png" alt="logo"
+            /></a>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            </p>
+            <ul class="social-list">
+              <li>
+                <a target="_blank" href="https://www.facebook.com/rovadex"
+                  ><i class="fa fa-facebook" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a target="_blank" href="https://twitter.com/RovadexStudio"
+                  ><i class="fa fa-twitter" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a target="_blank" href="https://www.youtube.com"
+                  ><i class="fa fa-youtube" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a target="_blank" href="https://www.instagram.com/rovadex"
+                  ><i class="fa fa-instagram" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-lg-3 footer-item footer-item-list">
+            <h3>Links</h3>
+            <ul class="footer-link">
+              <li><a href="#">Sed ut perspiciatis unde</a></li>
+              <li><a href="#">Omnis iste natus error sit</a></li>
+              <li><a href="#">Voluptatem accusantium</a></li>
+              <li><a href="#">Doloremque laudantium</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-lg-3 footer-item">
+            <h3>Contact us</h3>
+            <ul class="footer-cont">
+              <li>
+                <i class="fa fa-phone" aria-hidden="true"></i
+                ><a href="tel:18004886040">1-800-488-6040</a>
+              </li>
+              <li>
+                <i class="fa fa-envelope" aria-hidden="true"></i
+                ><a href="mailto:crossFit@gmail.com">CrossFit@gmail.com</a>
+              </li>
+              <li>
+                <i class="fa fa-map-marker" aria-hidden="true"></i
+                ><a href="contacts.html">London,Street 225r.21</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-lg-3 footer-item">
+            <h3>Blog</h3>
+            <ul class="footer-blog">
+              <li>
+                <a href="blog.html" class="img-cover"
+                  ><img src="assets/img/footer-icon-1.jpg" alt="img"
+                /></a>
+                <div class="footer-blog-info">
+                  <div class="name">
+                    <a href="blog.html">Sed ut perspiciatis</a>
+                  </div>
+                  <p>Omnis iste natus error sit voluptatem…</p>
+                </div>
+              </li>
+              <li>
+                <a href="blog.html" class="img-cover"
+                  ><img src="assets/img/footer-icon-2.jpg" alt="img"
+                /></a>
+                <div class="footer-blog-info">
+                  <div class="name">
+                    <a href="blog.html">Sed ut perspiciatis</a>
+                  </div>
+                  <p>Omnis iste natus error sit voluptatem…</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="copyright">
+            <a href="#" target="_blank">Rovadex</a> © 2019. Fitmax. All Rights
+            Reserved.
+          </div>
+          <ul class="footer-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">News</a></li>
+            <li><a href="contact.html">Contacts</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- ================ FOOTER END ================ -->
+
+    <!--=================== TO TOP ===================-->
+    <a class="to-top" href="#home">
+      <i class="fa fa-chevron-up" aria-hidden="true"></i>
+    </a>
+    <!--================= TO TOP END =================-->
+
+    <!--=================== SCRIPT	===================-->
+    <script src="assets/js/jquery-2.2.4.min.js"></script>
+    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+    <script src="script1.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
